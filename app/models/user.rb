@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+    
     attr_accessor :bio, :email, :full_name, :location, :password, :password_confirmation
 
     validates_presence_of :email, :full_name, :location, :password
@@ -10,20 +12,28 @@ class User < ApplicationRecord
 
     before_create :generate_token
 
+    
+
+    def self.authenticate(email, password)
+        confirmed.
+        find_by_email(email).
+        try(:authenticate, password)
+    end
+
     def generate_token
         self.confirmation_token = SecureRandom.urlsafe_base64
     end
     
     def confirm!
-     return if confirmed?
+        return if confirmed?
     
-     self.confirmed_at = Time.current
-     self.confirmation_token = ''
-     save!
+        self.confirmed_at = Time.current
+        self.confirmation_token = ''
+        save!
     end
       
     def confirmed?
-     confirmed_at.present?
+        confirmed_at.present?
     end
 
 end
