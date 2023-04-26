@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+
+  flash: 
+    alert:
+      needs_login: "Credentials to login"

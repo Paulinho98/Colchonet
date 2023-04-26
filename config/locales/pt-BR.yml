@@ -67,3 +67,6 @@ pt-BR:
       submit:
         user_session:
           create: 'Entrar'
+  flash: 
+    alert:
+      needs_login: "Credenciais para login"
