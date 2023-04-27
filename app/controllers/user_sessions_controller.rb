@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
     def new
-     @session = UserSession.new
+        @session = UserSession.new
     end
     
     def create
@@ -12,7 +12,8 @@ class UserSessionsController < ApplicationController
         end
     end
     
-    def destroy   
+    def destroy
+        user_session.destroy
+        redirect_to root_path, :notice => t('flash.notice.signed_out')
     end
-    
 end
