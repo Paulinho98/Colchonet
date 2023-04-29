@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
     :only => [:new, :edit, :create, :update, :destroy]
 
   def index
-    @rooms = Room.most_recent
+    @rooms = Room.all
   end
 
   def show
