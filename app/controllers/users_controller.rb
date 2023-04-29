@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-    before_filter :require_no_authentication, :only => [:new :create]
-    before_filter :can_change, :only => [:edit, :update]
+    
 
     def new
         @user = User.new
@@ -52,6 +51,6 @@ class UsersController < ApplicationController
     end
 
     def user
-        @user | |= User.find(params[:id])
+        
     end
 end

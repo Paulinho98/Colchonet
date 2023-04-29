@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :rooms
 
     
     attr_accessor :bio, :email, :full_name, :location, :password, :password_confirmation
