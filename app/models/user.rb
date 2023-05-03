@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-    has_many :rooms
+    has_many :rooms, :dependent => :destroy
+    has_many :reviews, :dependent => :destroy
 
     
     attr_accessor :bio, :email, :full_name, :location, :password, :password_confirmation

@@ -61,4 +61,11 @@ class RoomsController < ApplicationController
       params.require(:room).permit(:title, :location, :description)
     end
   end
+
+  
+
+  def show
+    room_model = Room.find(params[:id])
+    @room = RoomPresenter.new(room_model, self)
+  end
 end
