@@ -10,7 +10,7 @@ class User < ApplicationRecord
     validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
     validates_uniqueness_of :email
     
-    has_secure_password
+    # has_secure_password
 
     before_create :generate_token
 

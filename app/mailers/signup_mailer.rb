@@ -3,7 +3,7 @@ class SignupMailer < ActionMailer::Base
 
     def confirm_email(user)
         @user = user
-        @confirmation_link = confirmation_url({
+        @confirmation_link = user_confirmation_url({
             :token => @user.confirmation_token
         })
 

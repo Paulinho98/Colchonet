@@ -3,7 +3,7 @@ class UserSessionsController < ApplicationController
     before_action :require_authentication, :only => :destroy
 
     def new
-        @session = UserSession.new
+        @session = UserSession.new(session)
     end
     
     def create

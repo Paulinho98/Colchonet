@@ -1,4 +1,5 @@
 Colchonet::Application.routes.draw do
+  resources :customers
   LOCALES = /en|pt\-BR/
 
   scope "(:locale)", :locale => LOCALES do
