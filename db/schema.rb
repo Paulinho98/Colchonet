@@ -15,30 +15,11 @@ ActiveRecord::Schema.define(version: 2023_05_04_141332) do
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.boolean "vip"
+    t.integer "days_to_pay"
+    t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "rooms", force: :cascade do |t|
-    t.string "title"
-    t.string "location"
-    t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "full_name"
-    t.string "email"
-    t.string "password"
-    t.string "location"
-    t.text "bio"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.datetime "confirmed_at"
-    t.string "confirmation_token"
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
